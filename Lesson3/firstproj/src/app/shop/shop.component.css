@@ -1,0 +1,27 @@
+.card-item{
+  padding: 20px;
+  border-radius: 10px;
+  background: #d8d8d8;
+  margin-bottom: 10px;
+  border: 1px solid black;
+}
+.card-item img{
+  width: 218px;
+}
+#cards-container{
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+.done{
+  border: 2px solid green;
+}
+.canceled{
+  border: 2px solid red;
+}
+.inProcess{
+  border: 2px solid yellow;
+}
+.card-item a{
+  margin-right: 10px;
+}

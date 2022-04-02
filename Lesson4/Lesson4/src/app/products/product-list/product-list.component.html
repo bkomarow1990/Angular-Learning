@@ -1,0 +1,29 @@
+<h2>Product List</h2>
+
+<div class="example-button-row">
+  <button routerLink="/products/add" mat-raised-button color="accent">Add New</button>
+</div>
+
+<div *ngIf="!products" class="loading">
+  <img  src="https://cdn.dribbble.com/users/2973561/screenshots/5757826/loading__.gif" alt="Loading">
+</div>
+
+<p *ngIf="products?.length === 0">There is no genres yet!</p>
+
+<div *ngFor="let product of products; let i = index">
+  <mat-card class="genre-card">
+    <div>
+      Id: {{product.id}}
+    </div>
+    <div>
+      Name: {{product.name}}
+    </div>
+    <div>
+      Category: {{product.category}}
+    </div>
+    <div>
+      Price: {{product.price}}
+    </div>
+    <mat-button-toggle (click)="removeProduct(i)">Delete</mat-button-toggle>
+  </mat-card>
+</div>

@@ -1,0 +1,36 @@
+<h2>Create New Product</h2>
+
+<form (submit)="submit()" [formGroup]="form">
+  <div>
+    <mat-form-field appearance="fill">
+      <mat-label>Id:</mat-label>
+      <input formControlName="id" matInput>
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field appearance="fill">
+      <mat-label>Name:</mat-label>
+      <input formControlName="name" matInput>
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field appearance="fill">
+    <mat-label>Category</mat-label>
+    <mat-select formControlName="category">
+      <mat-option>-- None --</mat-option>
+
+        <mat-option *ngFor="let category of categories" [value]="category.name">
+          {{category.name}}
+        </mat-option>
+    </mat-select>
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field appearance="fill">
+      <mat-label>Price:</mat-label>
+      <input formControlName="price" matInput>
+    </mat-form-field>
+  </div>
+  <button [disabled]="!form.valid" mat-raised-button type="submit" color="accent">Save</button>
+  <a routerLink="/products" mat-raised-button>Back</a>
+</form>

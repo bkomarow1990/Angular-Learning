@@ -1,0 +1,23 @@
+<p *ngIf="orders?.length === 0">There is no orders yet!</p>
+<div id="cards-container">
+  <div class="card-item" *ngFor="let order of orders; let i = index" [ngClass]="{'done': order.step == 2, 'canceled': order.step == 1, 'inProcess' : order.step == 0}">
+    <ng-container [ngSwitch]="order.step">
+      <img *ngSwitchCase="0" class="card-img-top"  src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Noun_Project_process_icon_2519390.svg/1200px-Noun_Project_process_icon_2519390.svg.png" />
+      <img *ngSwitchCase="1" class="card-img-top" src="https://icon-library.com/images/canceled-icon/canceled-icon-4.jpg" />
+      <img *ngSwitchCase="2" class="card-img-top" src="https://freepikpsd.com/file/2019/11/done-png-7-Transparent-Images.png" />
+    </ng-container>
+    <div class="mycard-body">
+      <h3>Products: </h3>
+      <div *ngFor="let product of order.products">
+      <h5 class="card-title">Id: <span>{{product.id}}</span></h5>
+      <h5 class="card-title">Name: <span>{{product.name}}</span></h5>
+      <h5 class="card-text">Price: <span>{{product.price | currency:"UAH":"symbol"}}</span></h5>
+      <h5 class="card-text">Sell Date: <span>{{product.sellDate | date: 'dd.MM.yyyy'}}</span></h5>
+        <hr>
+      </div>
+      <h3>Status: {{order.step}}</h3>
+      <a class="btn btn-primary" (click)="removeOrder(i)">Delete </a>
+      <a class="btn btn-primary" (click)="doneOrder(i)">Done </a>
+    </div>
+  </div>
+</div>
