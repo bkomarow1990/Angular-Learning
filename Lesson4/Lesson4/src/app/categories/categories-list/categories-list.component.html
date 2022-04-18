@@ -1,4 +1,5 @@
 <h2>Category List</h2>
+<h1>{{data[0]}}</h1>
 
 <div class="example-button-row">
   <button routerLink="/categories/add" mat-raised-button color="accent">Add New</button>
@@ -7,12 +8,12 @@
 <div *ngIf="!categories" class="loading">
   <img  src="https://cdn.dribbble.com/users/2973561/screenshots/5757826/loading__.gif" alt="Loading">
 </div>
-
 <p *ngIf="categories?.length === 0">There is no genres yet!</p>
 
 <div *ngFor="let category of categories; let i = index">
   <mat-card class="genre-card">
     <div>{{category.name}}</div>
+    <mat-button-toggle [routerLink]="['/categories/edit/', category.id]">Edit</mat-button-toggle>
     <mat-button-toggle (click)="removeCategory(i)">Delete</mat-button-toggle>
   </mat-card>
 </div>

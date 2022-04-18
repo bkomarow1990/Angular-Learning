@@ -1,0 +1,21 @@
+<div class="container">
+  <h2>Register WorkBoard</h2>
+
+  <form (submit)="submit()" [formGroup]="form">
+    <div>
+      <mat-form-field appearance="fill">
+        <mat-label>Email:</mat-label>
+        <input type="email" formControlName="email" matInput>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field appearance="fill">
+        <mat-label>Password:</mat-label>
+        <input type="password" formControlName="password" matInput>
+      </mat-form-field>
+    </div>
+    <button [disabled]="!form.valid" mat-raised-button type="submit" color="accent">
+      Register
+    </button>
+  </form>
+  </div>

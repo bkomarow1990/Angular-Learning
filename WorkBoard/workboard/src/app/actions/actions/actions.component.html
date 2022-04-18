@@ -1,0 +1,31 @@
+<div class="container p-3 main">
+
+
+<button mat-raised-button color="primary" class="mb-4" routerLink="create"><mat-icon aria-hidden="false" aria-label="Example home icon">add</mat-icon> New</button>
+<main class="d-flex flex-wrap gap-4">
+      <div *ngFor="let item of actionItems; let i = index">
+        <mat-card >
+          <mat-card-title>{{item.name}}</mat-card-title>
+          <mat-card-actions>
+           <button mat-raised-button color="primary"><mat-icon aria-hidden="false" aria-label="Example home icon">edit</mat-icon> Edit</button>
+           <button mat-raised-button color="warn" (click)="remove(item.id)"><mat-icon aria-hidden="false" aria-label="Example home icon">delete</mat-icon> Delete</button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+
+
+          <!-- <h3 class="list-title">{{item.name}}</h3>
+
+          <ul class="list-items" >
+              <li>Execution Time: <p>{{item.executionTime | date:'short'}}</p></li>
+              <li></li>
+              <li>Commodi, dolorem quia?</li>
+              <li>Pariatur, animi reprehenderit.</li>
+          </ul> -->
+
+
+
+
+
+</main>
+</div>

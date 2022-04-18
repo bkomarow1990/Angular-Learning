@@ -14,6 +14,8 @@ import {ReactiveFormsModule} from "@angular/forms";
 import {MatButtonToggleModule} from "@angular/material/button-toggle";
 import { ProductListComponent } from './products/product-list/product-list.component';
 import { AddProductComponent } from './products/add-product/add-product.component';
+import { EditCategoryComponent } from './categories/edit-category/edit-category.component';
+import { UpsetCategoryComponent } from './categories/upset-category/upset-category.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { AddProductComponent } from './products/add-product/add-product.componen
     AddCategoryComponent,
     CategoriesListComponent,
     ProductListComponent,
-    AddProductComponent
+    AddProductComponent,
+    EditCategoryComponent,
+    UpsetCategoryComponent
   ],
   imports: [
     BrowserModule,

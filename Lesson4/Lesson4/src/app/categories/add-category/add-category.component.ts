@@ -25,7 +25,7 @@ export class AddCategoryComponent implements OnInit {
       alert("Invalid data!");
     else
       alert(this.form.controls["name"].value);
-    categoriesList.push({name : this.form.controls["name"].value});
+    //categoriesList.push({name : this.form.controls["name"].value});
     //
     // alert(this.form.controls["name"].value+" Saved!");
   }

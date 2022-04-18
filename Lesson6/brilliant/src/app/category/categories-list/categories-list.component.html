@@ -1,0 +1,4 @@
+<div *ngFor="let category of categories; let i = index" id="categories-container">
+  <h2>{{category.name}}</h2>
+  <button mat-raised-button color="primary" (click)="delete(category.id);">Delete</button>
+</div>

@@ -1,0 +1,22 @@
+<div class="container">
+<h2>Login to WorkBoard</h2>
+
+<form (submit)="submit()" [formGroup]="form">
+  <div>
+    <mat-form-field appearance="fill">
+      <mat-label>Login:</mat-label>
+      <input type="email" formControlName="email" matInput>
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field appearance="fill">
+      <mat-label>Password:</mat-label>
+      <input type="password" formControlName="password" matInput>
+    </mat-form-field>
+  </div>
+  <button [disabled]="!form.valid" mat-raised-button type="submit" color="accent">
+    Login
+  </button>
+</form>
+<h3>Haven`t account? <a routerLink="/account/register">Sign out</a></h3>
+</div>

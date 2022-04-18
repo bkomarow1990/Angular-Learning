@@ -1,0 +1,6 @@
+<ng-content *ngIf="accountService.isAuthenticated()" select="[authenticated]">
+
+</ng-content>
+<ng-content *ngIf="!accountService.isAuthenticated()" select="[notAuthenticated]">
+
+</ng-content>
